@@ -81,7 +81,7 @@
             margin-left: 25%;
         }
         .container .content {
-            padding: 2em;
+            padding: 2em .5em;
         }
         .inside-list li{
             margin-bottom: 1em;
@@ -89,6 +89,13 @@
         .topic {
             min-height: 100vh;
             display: block;
+        }
+        .nested-list {
+            margin-left: 10px;
+            font-size: 15px;
+            margin-top: 18px;
+            background: #eee;
+            padding: 1em;
         }
         
     </style>
@@ -129,9 +136,55 @@
                 <h2>New HTML Tag</h2>
                 <div class="content">
                     <ul class="inside-list">
-                        <li><span>&lt;mark&gt;</span> Defines marked/highlighted text</li>
-                        <li><span>&lt;progress&gt;</span> Represents the progress of a task </li>
-                        <li><span>&lt;datalist&gt;</span> Defines additional details that the user can view or hide</li>
+                        <li><span>&lt;mark&gt;</span> Defines marked/highlighted text
+                            <div class="nested-list">
+                                <mark>This text is heighted in with mark tag :)</mark>
+                            </div>
+                        </li>
+                        <li><span>&lt;progress&gt;</span> Represents the progress of a task 
+                            <div class="nested-list">
+                                Downloading progress:
+                                <progress value="33" max="100">
+                                </progress>
+                            </div>
+                        </li>
+                        <li><span>&lt;datalist&gt;</span> Defines additional details that the user can view or hide
+                            <div class="nested-list">
+                               
+                                <details>
+                                    <summary>Copyright 1999-2018.</summary>
+                                    <p> - by Refsnes Data. All Rights Reserved.</p>
+                                    <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+                                  </details>
+                            </div>
+                        </li>
+                        <li><span>&lt;meter&gt;</span> Tag defines a scalar measurement within a known range, or a fractional value.
+                            <div class="nested-list">
+                                <div style="margin-bottom: 15px;">
+                                    <p><strong>high</strong> - number Specifies the range that is considered to be a high value</p> 
+                                    <p><strong>low</strong> - number Specifies the range that is considered to be a low value</p>
+                                    <p><strong>max</strong> -  number Specifies the maximum value of the range</p>
+                                    <p><strong>min</strong> - number Specifies the minimum value of the range</p>
+                                    <p><strong>optimum</strong> - number Specifies what value is the optimal value for the gauge</p>
+                                    <p><strong>value</strong> - number Required. Specifies the current value of the gauge</p>
+                                </div>
+
+                                <meter value="2" min="0" max="10">2 out of 10</meter><br/>
+                                <meter value="0.6">60%</meter><br/>
+                                <meter low=".25" optimum=".85" high=".75" value=".5"></meter><br/>
+                                <meter value=".9" high=".8"></meter><br/>
+                                <meter low=".25" optimum=".2" high=".75" value=".8"></meter>
+                            </div>
+                        </li>
+                        <li><span>&lt;picture&gt;</span> Tag gives web developers more flexibility in specifying image resources.
+                            <ul class="nested-list">
+                                <li>srcset (required) - defines the URL of the image to show</li>
+                                <li>media - accepts any valid media query that would normally be defined in a CSS</li>
+                                <li>sizes - defines a single width descriptor, a single media query with width descriptor, or a comma-delimited list of media queries with a width descriptor</li>
+                                <li>type - defines the MIME type</li> 
+                            </ul>
+                            <a href="picture.html">Click here</a>
+                        </li>
                     </ul>
                 </div>
             </div>
