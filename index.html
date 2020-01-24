@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMS Meetup</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            overflow-x: hidden;
+        }
+        *, *:before, *:after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        li{
+            list-style:  none;
+        }
+        .sidebar header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        main {
+            box-sizing: border-box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            -webkit-box-orient: horizontal;
+            /* -webkit-box-direction: normal; */
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -.5rem;
+            margin-left: -.5rem;
+
+        }
+        .sidebar, .container {
+            box-sizing: border-box;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            padding: 2em;
+            padding-right: .5rem;
+            padding-left: 1.2rem;
+        }
+        .sidebar {
+            flex-basis: 25%;
+            max-width: 25%;
+            position: fixed;
+        }
+        .sidebar li {
+            margin-bottom: .5rem;
+        }
+        .sidebar li.active a{
+            color: red;
+        }
+        .sidebar li a {
+            color: #333;
+            text-decoration: none;
+        }
+        .container {
+            flex-basis: 66.66666667%;
+            max-width: 66.66666667%;
+            flex: 0 0 auto;
+            padding-right: .5rem;
+            padding-left: 1.2rem;
+            display: flex;
+            min-height: 100vh;
+            border-left: 1px solid #ccc;
+            flex-direction: column;
+            margin-left: 25%;
+        }
+        .container .content {
+            padding: 2em;
+        }
+        .inside-list li{
+            margin-bottom: 1em;
+        }
+        .topic {
+            min-height: 100vh;
+            display: block;
+        }
+        
+    </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('html, body').animate({
+                        scrollTop: $('#topic-1').offset().top - 20
+                    }, 700);	
+                $('.nav a').on('click', function(e){
+                    e.preventDefault()
+                    //$( this ).parent().find( 'li.active' ).removeClass( 'active' );
+                    $(this).parent().addClass('active').siblings().removeClass('active');
+                    var activeTopic = $(this).attr('href')
+                    $('html, body').animate({
+                        scrollTop: $(activeTopic).offset().top - 20
+                    }, 700);	
+                })
+            })
+                
+        </script>
+</head>
+<body>
+    <main>
+        <aside class="sidebar">
+            <header>BMS MEETUP TOPICS</header>
+            <ul class="nav">
+                <li class="active"><a href="#topic-1">New HTML Tag</a></li>
+                <li><a href="#topic-2">Web Components</a></li>
+                <li><a href="#topic-3">Shadow DOM</a></li>
+                <li><a href="#topic-4">CSS Flex</a></li>
+                <li><a href="#topic-5">CSS Grid</a></li>
+            </ul>
+        </aside>
+        <div class="container">
+            <div class="topic" id='topic-1'>
+                <h2>New HTML Tag</h2>
+                <div class="content">
+                    <ul class="inside-list">
+                        <li><span>&lt;mark&gt;</span></li>
+                        <li><span>&lt;progress&gt;</span></li>
+                        <li><span>&lt;datalist&gt;</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="topic" id='topic-3'>
+                <h2>Shadow DOM </h2>
+                <div class="content">
+                    <ul class="inside-list">
+                        <li><span>&lt;mark&gt;</span></li>
+                        <li><span>&lt;progress&gt;</span></li>
+                        <li><span>&lt;datalist&gt;</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+</body>
+</html>
