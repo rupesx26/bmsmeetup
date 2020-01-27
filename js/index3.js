@@ -1,0 +1,1 @@
+CSS.paintWorklet.addModule('js/custombg3.js');

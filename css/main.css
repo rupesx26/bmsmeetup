@@ -1,0 +1,19 @@
+.container {
+    width: 300px;
+    height: 300px;
+    --color-stop: blue;
+    background: linear-gradient(white, var(--color-stop));
+    transition: all 1s ease;    
+}
+
+.container:hover {
+    --color-stop: black;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 3em;
+    margin: 2em;
+    padding: .5em;
+    background-image: paint(simonbg);
+}
