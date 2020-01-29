@@ -97,6 +97,12 @@
             background: #eee;
             padding: 1em;
         }
+        .list-2 li{
+            margin-bottom: 1em;
+        }
+        .list-2 li:last-child {
+            margin-bottom: 0;
+        }
         
     </style>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -199,6 +205,52 @@
                         <li><span>&lt;datalist&gt;</span></li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="topic" id="topic-6">
+                <h2>CSS Houdini</h2>
+                <div class="content">
+                    <p>Houdini is a set of low-level APIs that exposes parts of the CSS engine, giving developers the power to extend CSS by hooking into the styling and layout process of a browser’s rendering engine. </p>
+                    <p>Houdini is a group of APIs that give developers direct access to the CSS Object Model</p>
+                </div>
+                <div class="content">
+                    <h3>Advantages of Houdini</h3>
+                    <div class="content">
+                        <ul class="list-2">
+                            <li>Houdini enables <mark> faster </mark> parse times than using JavaScript .style for style changes.</li>
+                            <li>Browsers parse the CSSOM <mark> before applying any style </mark> updates found in scripts.</li>
+                            <li>Houdini code <mark>doesn't wait</mark> for that first rendering cycle to be complete.</li>
+                            <li>Houdini provides an <mark>object-based API </mark> for working with CSS values in JavaScript.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>The Houdini API's</h3>
+                    <div class="content">
+                        <ul class="list-2">
+                            <li><strong>CSS Parser API</strong> Currently in WIP </li>
+                            <li><strong>CSS Properties and Values API</strong> Defines an API for registering new CSS properties. Properties registered using this API are provided with a parse syntax that defines a type, inheritance behaviour, and an initial value.
+                            </li>
+                            <li><strong>CSS Typed OM</strong> Converting CSSOM value strings into meaningfully typed JavaScript representations and back can incur a significant performance overhead.  </li>
+                            <li> <strong>CSS Layout API </strong> Developed to improve the extensibility of CSS — allows developers to write JavaScript functions that can draw directly into an element's background, border, or content via the paint() CSS function.</li>
+                            <li> <strong>Worklets</strong> An API for running scripts in various stages of the rendering pipeline independent of the main JavaScript execution environment.  (conceptually similar to Web Workers)</li>
+                        </ul>
+                        
+                    </div>
+
+                    <div class="content">
+                        <ul class="list-2">
+                            <li><strong><a href='houdini-ex-1.html'>Example 1 </a></strong></li>
+                            <li><strong><a href='houdini-ex-2.html'>Example 2 </a></strong></li>
+                            <li><strong><a href='houdini-ex-3.html'>Example 3 </a></strong></li>
+                            <li><strong><a href='houdini-ex-4.html'>Example 4 </a></strong></li>
+                        </ul>
+                        
+                    </div>
+
+                </div>
+
             </div>
 
 
